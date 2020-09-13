@@ -16,6 +16,21 @@ module.exports = (env = {}) => ({
         use: 'vue-loader'
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+        ]
+      },
+      {
         test: /\.ts$/,
         loader: 'ts-loader',
         options: {

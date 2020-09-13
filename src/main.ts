@@ -1,6 +1,6 @@
-function boo(name: string) {
-  console.log(`hello, ${name}`)
-}
+import { createApp } from "vue"
+import App from "./components/app.vue"
 
-console.log('this is the main script.')
-boo("rob")
+document.addEventListener('DOMContentLoaded', () => {
+  createApp(App).mount('#ciy')
+})
