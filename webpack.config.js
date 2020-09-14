@@ -1,5 +1,6 @@
 const path = require('path')
 const { VueLoaderPlugin } = require('vue-loader')
+const { resolve } = require('path')
 
 module.exports = (env = {}) => ({
   mode: env.prod ? 'production' : 'development',
@@ -42,7 +43,8 @@ module.exports = (env = {}) => ({
   resolve: {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
-      'vue': '@vue/runtime-dom'
+      'vue': '@vue/runtime-dom',
+      '@lib': resolve('./src/lib'),
     }
   },
   plugins: [

@@ -15,6 +15,9 @@
     "suppressImplicitAnyIndexErrors": true,
     "target": "es2015",
     "baseUrl": ".",
+    "paths": {
+      "@lib/*": ["src/lib/*"]
+    }
   },
   "exclude": [
     "./node_modules"

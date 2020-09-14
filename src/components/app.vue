@@ -1,34 +1,42 @@
-
 <template>
-<div class="green">
-  <h2>This is a Vue 3 component!</h2>
-  <button @click="increase">Clicked {{ count }} times.</button>
-</div>
+  <div class="ciy">
+    <div class="sidebar">
+      sidebar
+    </div>
+
+    <div class="content">
+      content
+    </div>
+  </div>
 </template>
 
-
 <script lang="ts">
-import {defineComponent, ref} from "vue";
+import { defineComponent, ref, onMounted } from "vue"
+import Split from 'split.js'
+
 export default defineComponent({
   setup() {
-    const count = ref(0)
-    const increase = () => {
-      count.value++
-    }
+    onMounted(() => {
+      Split(['.sidebar', '.content'], {
+        sizes: [33, 66],
+        minSize: 320
+      })
+    })
 
     return {
-      count,
-      increase,
     }
   }
 });
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+.ciy {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
 
-.green {
-button {
-  background: red;
-}
+  .sidebar {}
+  .content {}
 }
 </style>

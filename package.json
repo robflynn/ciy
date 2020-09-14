@@ -5,10 +5,12 @@
   "license": "MIT",
   "dependencies": {
     "@vue/compiler-sfc": "^3.0.0-rc.10",
+    "split.js": "^1.6.2",
     "ts-loader": "^8.0.3",
     "typescript": "^4.0.2",
     "vue": "^3.0.0-rc.10",
     "vue-loader": "^16.0.0-beta.7",
+    "vue-split-panel": "^1.0.4",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
   },
