@@ -55,6 +55,7 @@ export default defineComponent({
 
   .content {
     padding: $padding;
+    background: lighten(slategrey, 30%);
   }
 }
 </style>

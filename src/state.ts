@@ -2,14 +2,15 @@ import { reactive, toRefs } from "vue"
 import * as uuid from 'uuid'
 
 interface Caption {
-  id: string
+  id: string,
+  text: string | null
 }
 
 const createCaptions = (num) => {
   let captions: Caption[] = []
 
   for (var i = 0; i < num; i++) {
-    let caption = { id: uuid.v1() }
+    let caption = { id: uuid.v4(), text: null }
 
     captions.push(caption)
   }
