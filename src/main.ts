@@ -1,3 +1,4 @@
+import "element-closest"
 import { createApp } from "vue"
 import App from "./components/app.vue"
 import CaptionsList from './components/captions_list.vue'

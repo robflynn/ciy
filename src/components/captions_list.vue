@@ -1,10 +1,10 @@
 <template>
   <div class="captions-list">
-    <div v-for="(caption, index) in captions" :key="caption.id" class="captions-list__item">
+    <div v-for="(caption, index) in captions" :key="caption.id" class="captions-list__item" :data-uuid="caption.id">
       <div class="row between">
         <span class="index">{{ index + 1 }}</span>
         <div class="buttons">
-          <a role="button" data-action="delete-caption" class="captions-list__item__delete">
+          <a role="button" data-action="delete-caption" class="captions-list__item__delete" @click="deleteCaption($event)">
             <span class="icon-delete"></span>
           </a>
         </div>
@@ -26,12 +26,25 @@
 
 <script>
 import { defineComponent } from 'vue'
-import captions from '../state'
+import appState from '../state'
+import { fadeOut, slideUp } from '../ui'
 
 export default defineComponent({
   setup() {
+    const deleteCaption = async (e) => {
+      let caption = e.target.closest('.captions-list__item')
+      let uuid = caption.dataset.uuid
+
+      await fadeOut(caption, 250)
+      await slideUp(caption, 100)
+
+      appState.removeCaption(uuid)
+    }
+
+
     return {
-      captions: captions.captions
+      captions: appState.captions,
+      deleteCaption,
     }
   },
 })

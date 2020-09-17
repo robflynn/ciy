@@ -27,8 +27,18 @@ const meow = async () => {
   console.log('meow')
 }
 
+const removeCaption = async (uuid) => {
+  for (var i = 0; i < state.captions.length; i++) {
+    if (state.captions[i].id == uuid) {
+      state.captions.splice(i, 1)
+
+      return
+    }
+  }
+}
+
 const appState = {
-  ...toRefs(state), meow
+  ...toRefs(state), removeCaption
 }
 
 export default appState
