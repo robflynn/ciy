@@ -1,8 +1,8 @@
 <template>
   <div class="captions-list">
-    <div class="captions-list__item">
+    <div v-for="caption in captions" :key="caption.id" class="captions-list__item">
       <div class="row between">
-        <span class="index">1</span>
+        <span class="index">{{ caption.id }}</span>
         <div class="buttons">
           <button>X</button>
         </div>
@@ -24,11 +24,14 @@
 
 <script>
 import { defineComponent } from 'vue'
+import captions from '../state'
 
 export default defineComponent({
   setup() {
-    return {}
-  }
+    return {
+      captions: captions.captions
+    }
+  },
 })
 </script>
 

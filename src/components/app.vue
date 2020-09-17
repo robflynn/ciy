@@ -7,7 +7,7 @@
     </div>
 
     <div class="content">
-      <captions-list />
+      <captions-list  />
     </div>
   </div>
 
@@ -15,8 +15,9 @@
 
 <script lang="ts">
 import { global as EventBus } from "../lib/event_bus"
-import { defineComponent, ref, onMounted } from "vue"
+import { defineComponent, ref, onMounted, reactive } from "vue"
 import Split from 'split.js'
+import appState from '../state'
 
 export default defineComponent({
   setup() {
