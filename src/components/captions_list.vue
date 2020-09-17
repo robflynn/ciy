@@ -41,7 +41,6 @@ export default defineComponent({
       appState.removeCaption(uuid)
     }
 
-
     return {
       captions: appState.captions,
       deleteCaption,

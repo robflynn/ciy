@@ -32,6 +32,11 @@ const removeCaption = async (uuid) => {
     if (state.captions[i].id == uuid) {
       state.captions.splice(i, 1)
 
+      // Always keep one blank caption
+      if (state.captions.length == 0) {
+        state.captions.push(createCaptions(1)[0])
+      }
+
       return
     }
   }
