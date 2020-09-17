@@ -1,17 +1,16 @@
 <template>
   <div class="video-controls row">
-    <button>Play</button>
-    <button>Pause</button>
-    <button>RW</button>
-    <button>FF</button>
+    <button @click="play()">Play</button>
+    <button @click="pause()">Pause</button>
+    <button @click="skip(-5)">Back 5</button>
+    <button @click="skip(-10)">Back 10</button>
+    <button @click="skip(-15)">Back 15</button>
+    <button @click="skip(5)">Fwd 5</button>
+    <button @click="skip(10)">Fwd 10</button>
+    <button @click="skip(15)">Fwd 15</button>
     <button>Insert Start</button>
     <button>Insert Stop</button>
-    <button>Back 5</button>
-    <button>Back 10</button>
-    <button>Back 15</button>
-    <button>Fwd 5</button>
-    <button>Fwd 10</button>
-    <button>Fwd 15</button>
+
     <span class="video-controls__time">00:00:00</span>
   </div>
 </template>
@@ -31,11 +30,30 @@
 </style>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
+import appState from '../state'
 
 export default defineComponent({
   setup() {
+    const player = computed(() => { return appState.videoElement } )
+
+    const play = () => {
+      player.value.play()
+    }
+
+    const pause = () => {
+      player.value.pause()
+    }
+
+    const skip = (seconds) => {
+      player.value.currentTime += seconds
+    }
+
     return {
+      player,
+      play,
+      pause,
+      skip
     }
   }
 })

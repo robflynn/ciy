@@ -21,6 +21,7 @@ const createCaptions = (num) => {
 const state = reactive({
   selectedCaption: null,
   captions: createCaptions(20),
+  videoElement: null
 })
 
 const meow = async () => {

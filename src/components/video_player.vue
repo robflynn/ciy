@@ -5,10 +5,15 @@
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import appState from "../state"
 
 export default defineComponent({
   setup() {
+    onMounted(() => {
+      appState.videoElement = document.querySelector('video')
+    })
+
     return {
     }
   },
