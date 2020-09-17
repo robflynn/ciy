@@ -1,8 +1,7 @@
 <template>
   <div class="ciy">
     <div class="sidebar">
-      <video src="https://test-videos.co.uk/vids/bigbuckbunny/mp4/h264/360/Big_Buck_Bunny_360_10s_10MB.mp4"></video>
-
+      <video-player />
       <video-controls />
     </div>
 
@@ -15,8 +14,9 @@
 
 <script lang="ts">
 import { global as EventBus } from "../lib/event_bus"
-import { defineComponent, ref, onMounted, reactive } from "vue"
 import Split from 'split.js'
+
+import { defineComponent, ref, onMounted, reactive } from "vue"
 import appState from '../state'
 
 export default defineComponent({
@@ -55,7 +55,7 @@ export default defineComponent({
 
   .content {
     padding: $padding;
-    background: lighten(slategrey, 30%);
+    background: var(--color-captions-list-background);
   }
 }
 </style>

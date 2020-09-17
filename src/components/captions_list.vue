@@ -77,16 +77,19 @@ $cellPadding: 10px;
 
 .captions-list {
   height: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+
+  scrollbar-color: v;
 
   &__item {
     border-radius: 0.5rem;
     margin-bottom: 0.75rem;
     padding: 0.25rem;
+    margin-right: 0.5em;
 
     border: inset 1px;
 
-    background-color: lighten(slategray, 40%);
+    background-color: var(--color-captions-list--item-background);
 
     &__delete {
       cursor: pointer;
