@@ -64,6 +64,9 @@ $cellPadding: 10px;
 }
 
 .captions-list {
+  height: 100%;
+  overflow-y: auto;
+
   &__item {
     border-radius: 0.5rem;
     margin-bottom: 0.75rem;
